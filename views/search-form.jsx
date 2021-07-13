@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = (props) => {
+export default (props) => {
   return (
     <form className="search-form mx-2 my-4 px-3 py-2 d-flex" method="get" action="/">
       <input

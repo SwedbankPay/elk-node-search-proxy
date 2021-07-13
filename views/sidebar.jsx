@@ -1,7 +1,7 @@
-const React = require('react');
-const SearchForm = require('./search-form');
+import React from 'react';
+import SearchForm from './search-form';
 
-function Sidebar(props) {
+export default (props) => {
   function sidebar() {
     if (!props || !props.sidebar) {
       console.error('No or invalid sidebar object:', props);
@@ -34,5 +34,3 @@ function Sidebar(props) {
     </div>
   );
 }
-
-module.exports = Sidebar;

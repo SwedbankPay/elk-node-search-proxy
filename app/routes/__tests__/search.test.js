@@ -1,8 +1,7 @@
-const nock = require('nock')
-const request = require("supertest");
-const app = require('../../app')
-const $ = require('jquery');
-import setImmediate from 'setimmediate';
+import nock from 'nock';
+import request from 'supertest';
+import app from '../../app.js';
+import $ from 'jquery';
 
 function mockElasticsearch(hitme) {
   const hitsTestData = {

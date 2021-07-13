@@ -1,20 +1,24 @@
-const React = require('react');
-const DefaultLayout = require('./layouts/default');
+import React from 'react';
+import DefaultLayout from './layouts/default';
 import Pagination from './pagination'
 import Sidebar from './sidebar'
 import SearchHeader from './search-header';
 import SearchResults from './search-results';
 
-module.exports = (props) => {
+export default (props) => {
+  const title = props?.queryState?.query
+    ? `Search results for "${props.queryState.query}"`
+    : 'Search the Swedbank Pay Developer Portal';
+
   return (
-    <DefaultLayout title={props.query}>
-      <Sidebar sidebar={props.sidebar} query={props.query} />
+    <DefaultLayout title={title}>
+      <Sidebar sidebar={props.sidebar} query={props.queryState.query} />
       <main className="doc-view">
         <div className="doc-container">
-          <SearchHeader {...props} />
+          <SearchHeader queryState={props.queryState} />
           <div id="search-content">
             <div className="search-results">
-              <SearchResults {...props} />
+              <SearchResults queryState={props.queryState} />
             </div>
             <Pagination {...props} />
           </div>

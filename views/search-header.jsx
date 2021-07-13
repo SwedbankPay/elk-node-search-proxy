@@ -1,15 +1,17 @@
-const React = require('react');
+import React from 'react';
 
-module.exports = (props) => {
-  const isIndex = props.query == null;
+export default (props) => {
+  const query = props?.queryState?.query;
+  const isIndex = query == null;
   let searchHeaderTitle;
   let resultsLead = '';
 
   if (isIndex) {
     searchHeaderTitle = "Search the Developer Portal";
   } else {
-    searchHeaderTitle = `Results for \"${props.query}\"`;
-    resultsLead = `${props.results.total} results found`;
+    searchHeaderTitle = `Results for \"${query}\"`;
+    const total = props?.queryState?.results?.total || 0;
+    resultsLead = `${total} results found`;
   }
 
   return (

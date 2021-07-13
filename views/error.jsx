@@ -1,4 +1,4 @@
-var React = require('react');
+import React from 'react';
 
 function HelloMessage(props) {
   return (
@@ -6,4 +6,4 @@ function HelloMessage(props) {
   );
 }
 
-module.exports = HelloMessage;
+export default HelloMessage;

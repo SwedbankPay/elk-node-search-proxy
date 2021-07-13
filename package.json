@@ -2,10 +2,16 @@
   "name": "elk-node-search-proxy",
   "version": "0.0.1",
   "private": true,
+  "type": "module",
+  "engines": {
+    "node": "^12",
+    "npm": ">=6"
+  },
   "scripts": {
-    "start": "node server.js",
+    "start": "node ./app/server.js",
     "test": "jest",
-    "watch": "npm-watch"
+    "watch": "npm-watch",
+    "check": "find . -name '*.js' -not -path './node_modules/*' -exec node --check {} \\;"
   },
   "watch": {
     "start": {

@@ -1,6 +1,6 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = (props) => {
+export default (props) => {
   return (
     <html>
         <head>
@@ -11,20 +11,17 @@ module.exports = (props) => {
             <meta name="application-name" content="Developer Portal Search" />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-            <meta name="apple-mobile-web-app-title" content="Developer Portal Search" />
+            <meta name="apple-mobile-web-app-title" content={props.title} />
             <meta name="msapplication-TileColor" content="#000" />
             <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png" />
             <meta property="og:type" value="website" />
             <meta property="og:url" value="https://search.developer.swedbankpay.com/" />
-            <meta property="og:title" value="Developer Portal Search" />
-            <meta name="title" content="Developer Portal Search" />
+            <meta property="og:title" value={props.title} />
+            <meta name="title" content={props.title} />
             <meta property="og:description" value="Swedbank Pay Developer Portal Search" />
             <meta name="description" content="Swedbank Pay Developer Portal Search" />
             <meta property="og:image" value="https://developer.swedbankpay.com/assets/img/swedbank-pay-developer-portal.png" />
-            <meta name="apple-mobile-web-app-capable" content="yes" />
-            <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-            <meta name="apple-mobile-web-app-title" content="Developer Portal Search" />
-            <title>Search results {props.title}</title>
+            <title>{props.title}</title>
             <link rel="stylesheet" href="https://design.swedbankpay.com/v/5.0.2/styles/dg-style.css" />
             <link rel="stylesheet" type="text/css" href="stylesheet/style.css" />
             <link rel="shortcut icon" href="https://design.swedbankpay.com/v/5.0.2/icons/favicon.ico" />

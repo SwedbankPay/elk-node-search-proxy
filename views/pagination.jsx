@@ -1,7 +1,7 @@
-var React = require('react');
+import React from 'react';
 
-module.exports = (props) => {
-  if (props.query == null) {
+export default (props) => {
+  if (props.queryState == null) {
     return null;
   }
 
