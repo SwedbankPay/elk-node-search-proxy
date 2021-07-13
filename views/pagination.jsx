@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default (props) => {
-  if (props.query == null) {
+  if (props.queryState == null) {
     return null;
   }
 

@@ -11,17 +11,19 @@ function hitText(hit) {
 }
 
 function hydrateHits(props) {
-  if (props?.results?.hits == undefined || props?.results?.total == undefined) {
+  const results = props?.queryState?.results;
+
+  if (results?.hits == undefined || results?.total == undefined) {
     return {
       lead: 'Type in the query you wish to search for below.'
     };
-  } else if (props.results.hits.length == 0) {
+  } else if (results.hits.length == 0) {
     return {
-      lead: `No results were found for "${props.query}". Please try another search term.`
+      lead: `No results were found for "${props.queryState.query}". Please try another search term.`
     };
   }
 
-  return props.results;
+  return results;
 }
 
 function buildBreadcrumbs(hit) {
@@ -63,7 +65,7 @@ export default (props) => {
       <div>
         <h2>Search</h2>
         <p>{lead}</p>
-        <SearchForm query={props.query} />
+        <SearchForm query={props.queryState.query} />
       </div>
     );
   }
